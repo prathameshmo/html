@@ -1,5 +1,6 @@
-version: 0.2
 
+artifacts:
+    files: imagedefinitions.json
 phases:
   pre_build:
     commands:
@@ -23,5 +24,4 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"drupal","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-artifacts:
-    files: imagedefinitions.json
+version: 0.2
